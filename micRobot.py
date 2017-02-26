@@ -53,10 +53,10 @@ def main():
     print ("Reverse wheel direction with sound")
     rotFlag = False
     while(1):
-        buffer = upmMicrophone.uint16Array(8)
-        len = myMic.getSampledWindow(2, 8, buffer);
+        buffer = upmMicrophone.uint16Array(128)
+        len = myMic.getSampledWindow(2, 128, buffer);
         if len:
-            thresh = myMic.findThreshold(threshContext, 800, buffer, len)
+            thresh = myMic.findThreshold(threshContext, 700, buffer, len)
             print("len. thresh:", thresh)
             if(thresh):
                 print("Threshold is ", thresh)
