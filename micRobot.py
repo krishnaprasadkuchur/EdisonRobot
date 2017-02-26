@@ -60,6 +60,7 @@ def main():
             if(thresh):
                 print("Threshold is ", thresh)
                 myMic.printGraph(threshContext)
+                myMotorShield.enableMotor(M1Motor)
                 if (rotFlag):
                     rotFlag = False
                     myMotorShield.setMotorDirection(M1Motor, MotorDirCW)
