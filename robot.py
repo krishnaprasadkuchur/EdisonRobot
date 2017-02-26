@@ -24,8 +24,8 @@ def main():
     # This function lets you run code on exit,
     # including functions from myMotorShield
     def moveFwd():
-        myMotorShield.setMotorSpeed(M1Motor, 70)
-        myMotorShield.setMotorSpeed(M4Motor, 70)
+        myMotorShield.setMotorSpeed(M1Motor, 50)
+        myMotorShield.setMotorSpeed(M4Motor, 50)
         myMotorShield.setMotorDirection(M1Motor, MotorDirCW)
         myMotorShield.setMotorDirection(M4Motor, MotorDirCCW)
     def moveBack():
@@ -67,8 +67,8 @@ def main():
     myMotorShield.disableMotor(M4Motor)
 
     # set speed at 50%
-    myMotorShield.setMotorSpeed(M1Motor, 70)
-    myMotorShield.setMotorSpeed(M4Motor, 70)
+    myMotorShield.setMotorSpeed(M1Motor, 50)
+    myMotorShield.setMotorSpeed(M4Motor, 50)
     moveFwd()
 
     print("Spin M1 and M4 at half speed for 3 seconds, "
