@@ -63,9 +63,11 @@ def main():
                 if (rotFlag):
                     rotFlag = False
                     myMotorShield.setMotorDirection(M1Motor, MotorDirCW)
+                    time.sleep(3)
                 else:
                     rotFlag = True
                     myMotorShield.setMotorDirection(M1Motor, MotorDirCCW)
+                    time.sleep(3)
     # Delete the upmMicrophone object
     del myMic
     
