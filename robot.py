@@ -34,15 +34,15 @@ def main():
         myMotorShield.setMotorDirection(M1Motor, MotorDirCCW)
         myMotorShield.setMotorDirection(M4Motor, MotorDirCW)
     def turnRight():
-        myMotorShield.setMotorDirection(M1Motor, MotorDirCW)
+        myMotorShield.setMotorDirection(M1Motor, MotorDirCCW)
         myMotorShield.setMotorDirection(M4Motor, MotorDirCCW)
-        myMotorShield.setMotorSpeed(M1Motor, 0)
-        myMotorShield.setMotorSpeed(M4Motor, 50)
+        # myMotorShield.setMotorSpeed(M1Motor, 0)
+        # myMotorShield.setMotorSpeed(M4Motor, 50)
     def turnLeft():
         myMotorShield.setMotorDirection(M4Motor, MotorDirCW)
-        myMotorShield.setMotorDirection(M1Motor, MotorDirCCW)
-        myMotorShield.setMotorSpeed(M4Motor, 0)
-        myMotorShield.setMotorSpeed(M1Motor, 50)
+        myMotorShield.setMotorDirection(M1Motor, MotorDirCW)
+        # myMotorShield.setMotorSpeed(M4Motor, 0)
+        # myMotorShield.setMotorSpeed(M1Motor, 50)
     def pause():
         myMotorShield.disableMotor(M1Motor)
         myMotorShield.disableMotor(M4Motor)
