@@ -24,11 +24,29 @@ def main():
     # This function lets you run code on exit,
     # including functions from myMotorShield
     def moveFwd():
+        myMotorShield.setMotorSpeed(M1Motor, 50)
+        myMotorShield.setMotorSpeed(M4Motor, 50)
         myMotorShield.setMotorDirection(M1Motor, MotorDirCW)
         myMotorShield.setMotorDirection(M4Motor, MotorDirCCW)
     def moveBack():
+        myMotorShield.setMotorSpeed(M1Motor, 50)
+        myMotorShield.setMotorSpeed(M4Motor, 50)
         myMotorShield.setMotorDirection(M1Motor, MotorDirCCW)
         myMotorShield.setMotorDirection(M4Motor, MotorDirCW)
+    def turnRight():
+        myMotorShield.setMotorDirection(M1Motor, MotorDirCW)
+        myMotorShield.setMotorDirection(M4Motor, MotorDirCCW)
+        myMotorShield.setMotorSpeed(M1Motor, 25)
+        myMotorShield.setMotorSpeed(M4Motor, 50)
+    def turnLeft():
+        myMotorShield.setMotorDirection(M4Motor, MotorDirCW)
+        myMotorShield.setMotorDirection(M1Motor, MotorDirCCW)
+        myMotorShield.setMotorSpeed(M4Motor, 25)
+        myMotorShield.setMotorSpeed(M1Motor, 50)
+    def pause():
+        myMotorShield.disableMotor(M1Motor)
+        myMotorShield.disableMotor(M4Motor)
+    
     def exitHandler():
         myMotorShield.disableMotor(M1Motor)
         myMotorShield.disableMotor(M4Motor)
@@ -63,6 +81,8 @@ def main():
         print(key)
         if key == "w": moveFwd()
         elif key == "s": moveBack()
+        elif key == "a": turnLeft()
+        elif key == "d": turnRight()
         # time.sleep(3)
         
 
