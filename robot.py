@@ -42,8 +42,8 @@ def main():
     myMotorShield.disableMotor(M4Motor)
 
     # set speed at 50%
-    myMotorShield.setMotorSpeed(M1Motor, 50)
-    myMotorShield.setMotorSpeed(M4Motor, 50)
+    myMotorShield.setMotorSpeed(M1Motor, 90)
+    myMotorShield.setMotorSpeed(M4Motor, 90)
     myMotorShield.setMotorDirection(M1Motor, MotorDirCW)
     myMotorShield.setMotorDirection(M4Motor, MotorDirCCW)
 
