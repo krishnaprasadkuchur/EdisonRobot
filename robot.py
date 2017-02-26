@@ -50,6 +50,7 @@ def main():
     print ("Spin M1 and M4 at half speed for 3 seconds, "
     "then reverse for 3 seconds.")
     myMotorShield.enableMotor(M1Motor)
+    myMotorShield.enableMotor(M4Motor)
     while(1):
         time.sleep(3)
         myMotorShield.setMotorDirection(M1Motor, MotorDirCW)
