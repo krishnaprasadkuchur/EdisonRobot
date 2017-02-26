@@ -1,5 +1,6 @@
 from __future__ import print_function
 import time, sys, signal, atexit
+from getch import getch
 from upm import pyupm_adafruitms1438 as upmAdafruitms1438
 
 def main():
@@ -22,6 +23,12 @@ def main():
 
     # This function lets you run code on exit,
     # including functions from myMotorShield
+    def moveFwd():
+        myMotorShield.setMotorDirection(M1Motor, MotorDirCW)
+        myMotorShield.setMotorDirection(M4Motor, MotorDirCCW)
+    def moveBack():
+        myMotorShield.setMotorDirection(M1Motor, MotorDirCCW)
+        myMotorShield.setMotorDirection(M4Motor, MotorDirCW)
     def exitHandler():
         myMotorShield.disableMotor(M1Motor)
         myMotorShield.disableMotor(M4Motor)
@@ -44,21 +51,20 @@ def main():
     # set speed at 50%
     myMotorShield.setMotorSpeed(M1Motor, 50)
     myMotorShield.setMotorSpeed(M4Motor, 50)
-    myMotorShield.setMotorDirection(M1Motor, MotorDirCW)
-    myMotorShield.setMotorDirection(M4Motor, MotorDirCCW)
+    moveFwd()
 
-    print ("Spin M1 and M4 at half speed for 3 seconds, "
+    print("Spin M1 and M4 at half speed for 3 seconds, "
     "then reverse for 3 seconds.")
     myMotorShield.enableMotor(M1Motor)
     myMotorShield.enableMotor(M4Motor)
+    
     while(1):
-        time.sleep(3)
-        myMotorShield.setMotorDirection(M1Motor, MotorDirCW)
-        myMotorShield.setMotorDirection(M4Motor, MotorDirCCW)
-        time.sleep(3)
-        print("Reversing M1 and M4")
-        myMotorShield.setMotorDirection(M1Motor, MotorDirCCW)
-        myMotorShield.setMotorDirection(M4Motor, MotorDirCW)
+        key = getch()
+        print(key)
+        if key == "w": moveFwd()
+        elif key == "s": moveBack()
+        # time.sleep(3)
+        
 
     print("Stopping M1 and M4")
 
