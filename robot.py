@@ -45,7 +45,7 @@ def main():
     myMotorShield.setMotorSpeed(M1Motor, 50)
     myMotorShield.setMotorSpeed(M4Motor, 50)
     myMotorShield.setMotorDirection(M1Motor, MotorDirCW)
-    myMotorShield.setMotorDirection(M4Motor, MotorDirCW)
+    myMotorShield.setMotorDirection(M4Motor, MotorDirCCW)
 
     print ("Spin M1 and M4 at half speed for 3 seconds, "
     "then reverse for 3 seconds.")
@@ -54,11 +54,11 @@ def main():
     while(1):
         time.sleep(3)
         myMotorShield.setMotorDirection(M1Motor, MotorDirCW)
-        myMotorShield.setMotorDirection(M4Motor, MotorDirCW)
+        myMotorShield.setMotorDirection(M4Motor, MotorDirCCW)
         time.sleep(3)
         print("Reversing M1 and M4")
         myMotorShield.setMotorDirection(M1Motor, MotorDirCCW)
-        myMotorShield.setMotorDirection(M4Motor, MotorDirCCW)
+        myMotorShield.setMotorDirection(M4Motor, MotorDirCW)
 
     print("Stopping M1 and M4")
 
