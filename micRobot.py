@@ -57,6 +57,7 @@ def main():
         len = myMic.getSampledWindow(2, 8, buffer);
         if len:
             thresh = myMic.findThreshold(threshContext, 800, buffer, len)
+            print("len. thresh:", thresh)
             if(thresh):
                 print("Threshold is ", thresh)
                 myMic.printGraph(threshContext)
